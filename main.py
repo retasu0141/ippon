@@ -436,11 +436,10 @@ def handle_message(event):
 
     if msg_text == 'IPPONスタート':
         if hasattr(event.source,"group_id"):
-            ippon2(event.source.group_id)
+            data = ippon2(event.source.group_id)
         if hasattr(event.source,"room_id"):
-            ippon2(event.source.room_id)
+            data = ippon2(event.source.room_id)
         name = line_bot_api.get_profile(user_id).display_name
-        data = ippon2(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "スタート","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
         line_bot_api.reply_message(msg_from,messages=container_obj)
