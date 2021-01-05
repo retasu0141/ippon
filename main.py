@@ -96,9 +96,10 @@ def delta(id):
     cur.execute('SELECT * FROM db')
     for row in cur:
         if id in row[0]:
-            sql = 'delete from db where id = ?'
-            data = (row[0])
-            conn.cursor.execute(sql, data)
+            #sql = "delete from db where id = '{id}'".format(id=row[0])
+            #data = (row[0])
+            #cur.execute(sql, data)
+            cur.execute("delete from db where id = '{id}'".format(id=row[0]))
         else:
             pass
     return
