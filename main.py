@@ -170,7 +170,7 @@ def seve3(id,text,name,point,token):
         conn.commit()
         cur.execute('SELECT * FROM db')
         #cur.execute("UPDATE db SET name = '{name}' WHERE user_id='{user_id}';".format(name=ID2,user_id=ID+'Ms'))
-        cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id,text=text,name=name,point=point,point_n='0',tset=token))
+        cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id,text=text,name=name,point=point,point_n='0',test=token))
         conn.commit()
         print('ok4')
         return
