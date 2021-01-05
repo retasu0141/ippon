@@ -463,7 +463,7 @@ def handle_message(event):
         text = msg_text.replace("A.","")
         seve2(id,members)
         name = line_bot_api.get_profile(user_id).display_name
-        save3(msg_id,text,name,members_,msg_from)
+        seve3(msg_id,text,name,members_,msg_from)
         data = ippon1(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "回答","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
