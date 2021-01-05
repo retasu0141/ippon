@@ -26,7 +26,7 @@ import urllib.request, urllib.error
 from apiclient.discovery import build
 import urllib.parse
 import re, requests
-
+app = Flask(__name__)
 def checkURL(url):
     try:
         f = urllib.request.urlopen(url)
