@@ -412,10 +412,10 @@ def on_postback(event):
 
     if "join" in postback_msg:
         id = postback_msg.replace("join/","")
-        save1(id,user_id)
+        seve1(id,user_id)
         m_list = getmember(id)
         members = len(m_list)
-        save2(id,members)
+        seve2(id,members)
 
     if "投票" in postback_msg:
         id = postback_msg.replace("投票/","")
@@ -430,7 +430,7 @@ def on_postback(event):
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(token,messages=container_obj)
         else:
-            save4(id,str(point__n))
+            seve4(id,str(point__n))
 
 
 
