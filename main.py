@@ -129,8 +129,8 @@ def seve1(id,user_id):
         print (str(e))
         return
 
-def seve2(id,n_):
-    n = str(n_)
+def seve2(id,nint):
+    n = str(nint)
     #ID=ユーザーID URL=youtube_url
     try:
         print('ok2')
@@ -159,7 +159,6 @@ def seve2(id,n_):
         return
 
 def seve3(id,text,name,point,token):
-    n = str(n_)
     #ID=ユーザーID URL=youtube_url
     try:
         print('ok2')
@@ -178,7 +177,6 @@ def seve3(id,text,name,point,token):
         return
 
 def seve4(id,point):
-    n = str(n_)
     #ID=ユーザーID URL=youtube_url
     try:
         print('ok2')
