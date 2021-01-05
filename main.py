@@ -98,7 +98,7 @@ def delta(id):
         if id in row[0]:
             sql = 'delete from db where id = ?'
             data = (row[0])
-            cursor.execute(sql, data)
+            conn.cursor.execute(sql, data)
         else:
             pass
     return
