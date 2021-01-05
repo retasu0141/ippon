@@ -52,6 +52,7 @@ def getmember(id):
     member_list = []
     for row in cur:
         if id+'/' in row[0]:
+            print('ok')
             member_list.append(row)
         else:
             pass
@@ -466,6 +467,7 @@ def handle_message(event):
             m_list = getmember(event.source.group_id)
         if hasattr(event.source,"room_id"):
             m_list = getmember(event.source.room_id)
+        print(m_list)
         members = len(m_list)
         members_ = str(members)
         text = msg_text.replace("A.","")
@@ -475,7 +477,7 @@ def handle_message(event):
         data = ippon1(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "回答","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
-        line_bot_api.multicast([m_list],messages=container_obj)
+        line_bot_api.multicast(m_list,messages=container_obj)
         return
 
 
