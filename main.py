@@ -110,6 +110,16 @@ def seve1(id,user_id):
         cur.execute("ROLLBACK")
         conn.commit()
         cur.execute('SELECT * FROM db')
+        for row in cur:
+            if ID in row:
+                print(row)
+                dbID = row[0]
+                print('ok3')
+                print(dbID)
+                cur.execute("UPDATE db SET id = '{id}' WHERE name='{name}';".format(id=id+"/"+user_id,name=user_id))
+                conn.commit()
+                print('ok3-2')
+                return
         #cur.execute("UPDATE db SET name = '{name}' WHERE user_id='{user_id}';".format(name=ID2,user_id=ID+'Ms'))
         cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id+"/"+user_id,text="text",name=user_id,point='0',point_n='0',test='0'))
         conn.commit()
