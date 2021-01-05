@@ -461,7 +461,7 @@ def handle_message(event):
         members = len(m_list)
         members_ = str(members)
         text = msg_text.replace("A.","")
-        save2(id,members)
+        seve2(id,members)
         name = line_bot_api.get_profile(user_id).display_name
         save3(msg_id,text,name,members_,msg_from)
         data = ippon1(msg_text,name,msg_id)
