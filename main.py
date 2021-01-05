@@ -152,7 +152,7 @@ def seve2(id,nint):
                 print('ok3-2')
                 return
         #cur.execute("UPDATE db SET name = '{name}' WHERE user_id='{user_id}';".format(name=ID2,user_id=ID+'Ms'))
-        cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id,text="text",name="name",point=n,point_n='0',tset="0"))
+        cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id,text="text",name="name",point=n,point_n='0',test="0"))
         conn.commit()
         print('ok4')
         return
