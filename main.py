@@ -111,7 +111,7 @@ def seve1(id,user_id):
         conn.commit()
         cur.execute('SELECT * FROM db')
         for row in cur:
-            if ID in row:
+            if id in row:
                 print(row)
                 dbID = row[0]
                 print('ok3')
@@ -140,7 +140,7 @@ def seve2(id,n_):
         conn.commit()
         cur.execute('SELECT * FROM db')
         for row in cur:
-            if ID in row:
+            if id in row:
                 print(row)
                 dbID = row[0]
                 print('ok3')
@@ -188,7 +188,7 @@ def seve4(id,point):
         conn.commit()
         cur.execute('SELECT * FROM db')
         for row in cur:
-            if ID in row:
+            if id in row:
                 print(row)
                 dbID = row[0]
                 print('ok3')
