@@ -439,7 +439,7 @@ def handle_message(event):
             ippon2(event.source.group_id)
         if hasattr(event.source,"room_id"):
             ippon2(event.source.room_id)
-        name = line_bot_api.get_profile(user_id).displayName
+        name = line_bot_api.get_profile(user_id).display_name
         data = ippon2(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "スタート","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
@@ -463,7 +463,7 @@ def handle_message(event):
         members_ = str(members)
         text = msg_text.replace("A.","")
         save2(id,members)
-        name = line_bot_api.get_profile(user_id).displayName
+        name = line_bot_api.get_profile(user_id).display_name
         save3(msg_id,text,name,members_,msg_from)
         data = ippon1(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "回答","contents":data}
