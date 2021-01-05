@@ -419,6 +419,7 @@ def on_postback(event):
 
     if "投票" in postback_msg:
         id = postback_msg.replace("投票/","")
+        print(id)
         point_,point_n_ = getpoint(id)
         point_n = int(point_n_)
         point = int(point_)
