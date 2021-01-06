@@ -200,7 +200,7 @@ def seve4(id):
                 point_n = str(point_n_int)
                 print('ok3')
                 print(point_n)
-                r = cur.execute("UPDATE db SET id = '{id}' WHERE pointdate='{point_n}'".format(id=row[0],point_n=point_n))
+                r = cur.execute("UPDATE db SET pointdate='{point_n}' WHERE id = '{id}'".format(id=row[0],point_n=point_n))
                 print(r)
                 cur.execute('select * from db')
                 result = cur.fetchall()
