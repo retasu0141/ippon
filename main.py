@@ -97,9 +97,9 @@ def delta(id):
             print(row[0])
             data_id = row[0]
             #
-            sql = "delete from db where id = "
-            data = (data_id,)
-            cur.execute(sql, data)
+            sql = "delete from db where id = '{id}'".format(id=data_id)
+            #data = (data_id,)
+            cur.execute(sql)
             conn.commit()
         else:
             pass
