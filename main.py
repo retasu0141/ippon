@@ -184,7 +184,7 @@ def seve3(id,text,name,point,token):
         print (str(e))
         return
 
-def seve4(id,point_n):
+def seve4(id):
     try:
         print('ok2')
         conn = get_connection()
@@ -196,9 +196,11 @@ def seve4(id,point_n):
             if id in row:
                 print(row)
                 dbID = row[0]
+                point_n_int = int(row[4]) + 1
+                point_n = str(point_n_int)
                 print('ok3')
                 print(point_n)
-                r = cur.execute("UPDATE db SET id = '{id}' WHERE point_n='{point_n}';".format(id=row[0],point_n=str(point_n)))
+                r = cur.execute("UPDATE db SET id = '{id}' WHERE point_n='{point_n}'".format(id=row[0],point_n=str(point_n)))
                 print(r)
                 cur.execute('select * from db')
                 result = cur.fetchall()
