@@ -380,6 +380,252 @@ def ippon3(text,name):
 }
     return data
 
+def ippon4():
+    data = {
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://live.staticflickr.com/65535/50803657807_d507de63dd_z.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "使い方",
+        "weight": "bold",
+        "size": "3xl",
+        "align": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "注意",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "参加者は事前にこのアカウントを友達追加しておいてください",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "最初に",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "IPPONスタートと送信し参加者を決める",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "お題",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "任意のお題を決める",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "回答",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "A. の後に回答文をつけて送信する",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "回答例",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "A.○○だから",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "投票",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "個人チャットに投票用メッセージが届くので、良いと思ったら[投票]ボタンを押す",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "IPPON",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "指定の数以上の投票数が確認されるとグループにIPPONが出る",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "終了",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "人数リセット、又は終了するときはIPPON終了と送信する",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "secondary",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "IPPONスタート",
+          "text": "IPPONスタート"
+        }
+      },
+      {
+        "type": "button",
+        "style": "secondary",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "IPPON終了",
+          "text": "IPPON終了"
+        }
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ],
+    "flex": 0
+  }
+}
+    return data
+
 #環境変数取得
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
@@ -429,10 +675,12 @@ def on_postback(event):
         point_n = int(point_n_)
         point = int(point_)
         point__n = point_n + 1
-        if point >= 10:
+        if point >= 11:
+            point_data = 10
+        elif point >= 10:
             point_data = 8
-        elif point >= 5:
-            point_data = 4
+        elif point >= 9:
+            point_data = point - 1
         elif point <= 4:
             point_data = point
         if point_data <= point__n:
@@ -501,7 +749,12 @@ def handle_message(event):
         line_bot_api.multicast(m_list,messages=container_obj)
         return
 
-
+    if msg_text == 'IPPON使い方':
+        text = ippon4
+        flex = {"type": "flex","altText": "説明","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(msg_from,messages=container_obj)
+        return
 
 
 if __name__ == "__main__":
