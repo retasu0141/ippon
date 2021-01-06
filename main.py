@@ -429,7 +429,13 @@ def on_postback(event):
         point_n = int(point_n_)
         point = int(point_)
         point__n = point_n + 1
-        if point <= point__n:
+        if point >= 10:
+            point_data = 8
+        elif point >= 5:
+            point_data = 4
+        elif point <= 4:
+            point_data = point
+        if point_data <= point__n:
             text,name,token = getippon(id)
             data = ippon3(text,name)
             flex = {"type": "flex","altText": "回答","contents":data}
