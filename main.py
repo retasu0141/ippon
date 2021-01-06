@@ -92,17 +92,21 @@ def delta(id):
     cur.execute("ROLLBACK")
     conn.commit()
     cur.execute('SELECT * FROM db')
-    for row in cur:
+    sql = "delete from db where '{id}' in id".format(id=id)
+    #data = (data_id,)
+    cur.execute(sql)
+    conn.commit()
+    '''for row in cur:
         if id in row[0]:
             print(row[0])
             data_id = row[0]
             #
-            sql = "delete from db where id = '{id}'".format(id=data_id)
+            sql = "delete from db where '{id}' in id".format(id=data_id)
             #data = (data_id,)
             cur.execute(sql)
             conn.commit()
         else:
-            pass
+            pass'''
     return
 
 def seve1(id,user_id):
