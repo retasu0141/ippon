@@ -24,5 +24,5 @@ class Entry(db.Model):
     text = db.Column(db.String(), nullable=False, primary_key=True)
     name = db.Column(db.String(), nullable=False, primary_key=True)
     point = db.Column(db.String(), nullable=False, primary_key=True)
-    point_n = db.Column(db.String(), nullable=False, primary_key=True)
+    pointdate = db.Column(db.String(), nullable=False, primary_key=True)
     test = db.Column(db.String(), nullable=False, primary_key=True)
