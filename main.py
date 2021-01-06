@@ -679,7 +679,7 @@ def on_postback(event):
             point_data = 10
         elif point >= 10:
             point_data = 8
-        elif point >= 9:
+        elif point >= 9 and point <= 5:
             point_data = point - 1
         elif point <= 4:
             point_data = point
