@@ -426,7 +426,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "参加者は事前にこのアカウントを友達追加しておいてください",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -470,7 +470,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "任意のお題を決める",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -492,7 +492,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "A. の後に回答文をつけて送信する",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -514,7 +514,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "A.○○だから",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -536,7 +536,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "個人チャットに投票用メッセージが届くので、良いと思ったら[投票]ボタンを押す",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -558,7 +558,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "指定の数以上の投票数が確認されるとグループにIPPONが出る",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
@@ -580,7 +580,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "人数リセット、又は終了するときはIPPON終了と送信する",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
