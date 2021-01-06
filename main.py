@@ -273,7 +273,7 @@ def ippon1(msg,name,id):
           "type": "postback",
           "label": "投票",
           "data": "投票/"+id,
-          "displayText": "投票したよ！"
+          "displayText": name+"の"+msg+"に投票したよ！"
         }
       },
       {
