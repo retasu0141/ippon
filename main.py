@@ -184,8 +184,7 @@ def seve3(id,text,name,point,token):
         print (str(e))
         return
 
-def seve4(id,point):
-    #ID=ユーザーID URL=youtube_url
+def seve4(id,point_n):
     try:
         print('ok2')
         conn = get_connection()
@@ -198,8 +197,8 @@ def seve4(id,point):
                 print(row)
                 dbID = row[0]
                 print('ok3')
-                print(dbID)
-                cur.execute("UPDATE db SET id = '{id}' WHERE point_n='{point_n}';".format(id=id,point_n=point))
+                print(point_n)
+                cur.execute("UPDATE db SET id = '{id}' WHERE point_n='{point_n}';".format(id=id,point_n=point_n))
                 conn.commit()
                 print('ok3-2')
                 return
@@ -266,7 +265,8 @@ def ippon1(msg,name,id):
         "action": {
           "type": "postback",
           "label": "投票",
-          "data": "投票/"+id
+          "data": "投票/"+id,
+          "displayText": "投票したよ！"
         }
       },
       {
@@ -683,6 +683,8 @@ def on_postback(event):
             point_data = point - 1
         elif point <= 4:
             point_data = point
+        print(point_data)
+        print(point__n)
         if point_data <= point__n:
             text,name,token = getippon(id)
             data = ippon3(text,name)
