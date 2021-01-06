@@ -92,7 +92,7 @@ def delta(id):
     cur.execute("ROLLBACK")
     conn.commit()
     cur.execute('SELECT * FROM db')
-    sql = "delete from db where '{id}' in id".format(id=id)
+    sql = "delete from db where id = '{id}'".format(id=id)
     #data = (data_id,)
     cur.execute(sql)
     conn.commit()
@@ -464,8 +464,14 @@ def handle_message(event):
     if msg_text == 'IPPON終了':
         if hasattr(event.source,"group_id"):
             delta(event.source.group_id)
+            m_list = getmember(event.source.group_id)
+            id = event.source.group_id 
         if hasattr(event.source,"room_id"):
             delta(event.source.room_id)
+            m_list = getmember(event.source.room_id)
+            id = event.source.room_id
+        for member in m_list:
+            delta('{id}/{member}'.format(id=id,member=member))
         line_bot_api.reply_message(msg_from,TextSendMessage(text='また始めるときは　IPPONスタート　と言ってね！'))
         return
 
