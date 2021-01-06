@@ -95,7 +95,7 @@ def delta(id):
     for row in cur:
         if id in row:
             print(row[0])
-            sql = 'delete from db where id = "{id}"'.format(id=row[0])
+            sql = "delete from db where id = '{id}'".format(id=row[0])
             #data = (row[0],)
             cur.execute(sql)
         else:
