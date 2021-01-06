@@ -478,8 +478,10 @@ def handle_message(event):
     if 'A.' in msg_text:
         if hasattr(event.source,"group_id"):
             m_list = getmember(event.source.group_id)
+            id = event.source.group_id 
         if hasattr(event.source,"room_id"):
             m_list = getmember(event.source.room_id)
+            id = event.source.room_id
         members = len(m_list)
         members_ = str(members)
         text = msg_text.replace("A.","")
