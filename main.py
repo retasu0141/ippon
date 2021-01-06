@@ -542,7 +542,7 @@ def ippon4():
               },
               {
                 "type": "text",
-                "text": "投票用メッセージが届くので、良いと思ったら[投票]ボタンを押す",
+                "text": "個人チャットに投票用メッセージが届くので、良いと思ったら[投票]ボタンを押す",
                 "wrap": True,
                 "color": "#666666",
                 "size": "sm",
@@ -705,8 +705,8 @@ def on_postback(event):
             data = ippon3(text,name)
             flex = {"type": "flex","altText": "回答","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
-            #line_bot_api.reply_message(token,messages=container_obj)
-            line_bot_api.reply_message(reply_token,messages=container_obj)
+            line_bot_api.reply_message(token,messages=container_obj)
+            #line_bot_api.reply_message(reply_token,messages=container_obj)
         else:
             seve4(id)
 
@@ -764,8 +764,8 @@ def handle_message(event):
         data = ippon1(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "回答","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
-        #line_bot_api.multicast(m_list,messages=container_obj)
-        line_bot_api.reply_message(msg_from,messages=container_obj)
+        line_bot_api.multicast(m_list,messages=container_obj)
+        #line_bot_api.reply_message(msg_from,messages=container_obj)
         return
 
     if msg_text == 'IPPON使い方':
