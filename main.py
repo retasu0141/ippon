@@ -93,7 +93,7 @@ def delta(id):
     conn.commit()
     cur.execute('SELECT * FROM db')
     for row in cur:
-        if id in row:
+        if id in row[0]:
             print(row[0])
             sql = "delete from db where id = '{id}';".format(id=row[0])
             #data = (row[0],)
