@@ -699,7 +699,7 @@ def on_postback(event):
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(token,messages=container_obj)
         else:
-            seve4(id,str(point__n))
+            seve4(id)
 
 
 
