@@ -448,7 +448,7 @@ def ippon4():
               {
                 "type": "text",
                 "text": "IPPONスタートと送信し参加者を決める",
-                "wrap": true,
+                "wrap": True,
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
