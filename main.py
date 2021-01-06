@@ -8,7 +8,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, FlexSendMessage,  PostbackEvent, TemplateSendMessage,ButtonsTemplate,URIAction,QuickReplyButton,QuickReply
+    MessageEvent, JoinEvent, TextMessage, TextSendMessage, FlexSendMessage,  PostbackEvent, TemplateSendMessage,ButtonsTemplate,URIAction,QuickReplyButton,QuickReply
 )
 
 import time
@@ -662,6 +662,14 @@ def callback():
         abort(400)
 
     return 'OK'
+@handler.add(JoinEvent)
+def join(event):
+    reply_token = event.reply_token
+    data = ippon4()
+    flex = {"type": "flex","altText": "説明","contents":data}
+    container_obj = FlexSendMessage.new_from_json_dict(flex)
+    line_bot_api.reply_message(reply_token,messages=container_obj)
+
 
 @handler.add(PostbackEvent)
 def on_postback(event):
