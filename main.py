@@ -488,6 +488,7 @@ def handle_message(event):
         if hasattr(event.source,"room_id"):
             m_list = getmember(event.source.room_id)
             id = event.source.room_id
+        print(m_list)
         members = len(m_list)
         members_ = str(members)
         text = msg_text.replace("A.","")
@@ -497,7 +498,7 @@ def handle_message(event):
         data = ippon1(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "回答","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
-        line_bot_api.multicast([m_list],messages=container_obj)
+        line_bot_api.multicast(m_list,messages=container_obj)
         return
 
 
