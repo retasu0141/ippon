@@ -52,8 +52,7 @@ def getmember(id):
     member_list = []
     for row in cur:
         if id+'/' in row[0]:
-            print('ok')
-            member_list.append(row[2])
+            member_list.append(row)
         else:
             pass
     print(member_list)
@@ -68,7 +67,6 @@ def getpoint(id):
     cur.execute('SELECT * FROM db')
     for row in cur:
         if id in row[0]:
-            print(row)
             return row[4],row[3]
         else:
             pass
@@ -95,10 +93,11 @@ def delta(id):
     conn.commit()
     cur.execute('SELECT * FROM db')
     for row in cur:
-        if id in row[0]:
-            sql = 'delete from db where id = ?'
-            data = (row[0],)
-            cursor.execute(sql, data)
+        if id in row:
+            print(row[0])
+            sql = 'delete from db where id = "{id}"'.format(id=row[0])
+            #data = (row[0],)
+            cur.execute(sql)
         else:
             pass
     return
@@ -152,7 +151,7 @@ def seve2(id,nint):
                 print('ok3-2')
                 return
         #cur.execute("UPDATE db SET name = '{name}' WHERE user_id='{user_id}';".format(name=ID2,user_id=ID+'Ms'))
-        cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id,text="text",name="name",point=n,point_n='0',test="0"))
+        cur.execute("insert into db values('{id}','{text}','{name}','{point}','{point_n}','{test}')".format(id=id,text="text",name="name",point=n,point_n='0',tset="0"))
         conn.commit()
         print('ok4')
         return
@@ -419,8 +418,7 @@ def on_postback(event):
 
     if "投票" in postback_msg:
         id = postback_msg.replace("投票/","")
-        print(id)
-        point_,point_n_ = getpoint(id)
+        point_n_,point_ = getpoint(id)
         point_n = int(point_n_)
         point = int(point_)
         point__n = point_n + 1
@@ -469,7 +467,6 @@ def handle_message(event):
             m_list = getmember(event.source.group_id)
         if hasattr(event.source,"room_id"):
             m_list = getmember(event.source.room_id)
-        print(m_list)
         members = len(m_list)
         members_ = str(members)
         text = msg_text.replace("A.","")
@@ -479,7 +476,7 @@ def handle_message(event):
         data = ippon1(msg_text,name,msg_id)
         flex = {"type": "flex","altText": "回答","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
-        line_bot_api.multicast(m_list,messages=container_obj)
+        line_bot_api.multicast([m_list],messages=container_obj)
         return
 
 
