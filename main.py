@@ -750,7 +750,7 @@ def handle_message(event):
         return
 
     if msg_text == 'IPPON使い方':
-        text = ippon4
+        data = ippon4()
         flex = {"type": "flex","altText": "説明","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
         line_bot_api.reply_message(msg_from,messages=container_obj)
