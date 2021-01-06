@@ -52,7 +52,7 @@ def getmember(id):
     member_list = []
     for row in cur:
         if id+'/' in row[0]:
-            member_list.append(row)
+            member_list.append(row[2])
         else:
             pass
     print(member_list)
